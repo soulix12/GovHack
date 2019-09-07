@@ -1,5 +1,6 @@
 html{
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
@@ -9,15 +10,16 @@ body{
 .appContainer{
     width: 100%;
     background-color: #fafafa;
-}
-
-.appContainer h1{
     text-align: center;
 }
 
 .appContent{
     width: 500px;
     margin: auto;
+}
+
+.m20{
+    padding: 20px;
 }
 
 input{
