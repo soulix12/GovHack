@@ -12,36 +12,21 @@ df2 = pd.read_csv("C:/Users/eaderman/Downloads/Sydney_Rainfall_Data_2019.csv", u
 # Make a column for the Date out of Year, Month and Day 
 df2['Date'] = pd.to_datetime(df2[['Year', 'Month', 'Day']])
 ave = float(1000.2/365) #Sydney total for 2018 is 1000.2 mm
-ave_weekly = ave*7 #This is a weekly average rainfall for Sydney in 2018
+ave_weekly = ave*7 #This is a weekly average rainfall for Sydney in 2018 
 
-# Next 7 days forecast 
-ax = df2.iloc[-69:-62].plot(kind='bar', x='Date', y='Rainfall amount (millimetres)', color='b', legend=False) 
+# Next 31 days forecast based on weekly rainfall 
+ax = df2.iloc[-69:-38].plot(kind='bar', x='Date', y='Rainfall amount (millimetres)', color='b', legend=False) 
 ax.plot(legend=None)
-plt.axhline(y=ave, color='r', linestyle='dashed') 
+plt.axhline(y=ave, color='r', linestyle='dashed')
 ax.set_ylabel("Rainfall amount (millimetres)")
-#ax.set_ylim([-0.05,3.50])
 ax.set_xlabel("2019")
-ticklabels = ['']*len(df2.iloc[-69:-62])
-ticklabels[::1] = df2['Date'].iloc[-69:-62].dt.strftime('%b %d')
-ax.xaxis.set_major_formatter(mticker.FixedFormatter(ticklabels))
-plt.gcf().autofmt_xdate()
-ax.text(-0.20,3.30, "Average daily rainfall in Sydney 2018", style='italic')
-plt.show()
-
-'''
-# Next 31 days forecast based on weekly rainfall - can't remove legend for columns
-ax = df2.iloc[-38:-7].plot(kind='bar', x='Date', y='Rainfall amount (millimetres)', color='b') 
-ax.set_xlabel("Date")
-plt.axhline(y=ave_weekly, color='r', linestyle='dashed', label='Average weekly rainfall in Sydney 2018')
-ax.set_ylabel("Rainfall amount (millimetres)")
-ax.legend()
-ticklabels = ['']*len(df2.iloc[-38:-7])
-ticklabels[::7] = df2['Date'].iloc[-38:-7:7].dt.strftime('%b %d\n%Y')
+ticklabels = ['']*len(df2.iloc[-69:-38])
+ticklabels[::7] = df2['Date'].iloc[-69:-38:7].dt.strftime('%b %d')
 ax.xaxis.set_major_formatter(mticker.FixedFormatter(ticklabels))
 #plt.xticks(np.arange(df2['Date'].iat[5,-38], df2['Date'].iat[5,-7], 7))
 plt.gcf().autofmt_xdate()
-plt.show() 
-'''
+ax.text(7.50,3.30, "Average daily rainfall in Sydney 2018", style='italic')
+plt.show()  
 
 '''
 fig = px.line(df2, x='Date', y='Rainfall amount (millimetres)')
