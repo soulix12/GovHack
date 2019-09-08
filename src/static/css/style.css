@@ -43,3 +43,36 @@ header{
     width: 40%;
     border: solid 1px #858585;
 }
+
+.headerLarge{
+    font-size: 48px;
+}
+
+.aqua{
+    color: aqua;
+}
+
+.left{
+    float: left;
+}
+
+.clear{
+    clear: both;
+}
+
+.per30{
+    width: 30%;
+    margin-left: 5px;
+}
+
+.per100{
+    width: 100%
+}
+
+.glass{
+    color: darkgray;
+}
+
+.borderb{
+    border-bottom: solid 1px;
+}
