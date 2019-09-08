@@ -1,0 +1,78 @@
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif;}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 80%;
+}
+
+header{
+    background-color: greenyellow;
+    height: 6%;
+}
+
+.appContainer{
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    text-align: center;
+    padding: 20px;
+}
+
+.appContent{
+    height: 100%;
+    width: 500px;
+    margin: auto;
+    height: 100%;
+}
+
+.m20{
+    margin: 20px;
+}
+
+.pt20{
+    padding-top: 20px;
+}
+
+.field{
+    height: 36px;
+    border-radius: 4px;
+    padding-left: 10px;
+    width: 40%;
+    border: solid 1px #858585;
+}
+
+.headerLarge{
+    font-size: 48px;
+}
+
+.aqua{
+    color: aqua;
+}
+
+.left{
+    float: left;
+}
+
+.clear{
+    clear: both;
+}
+
+.per30{
+    width: 30%;
+    margin-left: 5px;
+}
+
+.per100{
+    width: 100%
+}
+
+.glass{
+    color: darkgray;
+}
+
+.borderb{
+    border-bottom: solid 1px;
+}

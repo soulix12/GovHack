@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GovHack</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<header>
+</header>
+<body>
+  <!--div id="app">
+    test3
+    {{ message }}
+    test4
+  </div-->
+  <div class="appContainer">
+    <div class="appContent">
+      <h1 class="m20">Welcome</h1>
+      <img src="" alt="logo">
+      <p class="m20">Join us on our mission to create self-sustaining Australian communities!</p>
+      <div class="pt20">
+        <label for="geoLocation">Let us know your location</label>
+      </div>
+      <input class="m20 field" type="text" id="geoLocation" placeholder="Enter suburb or postcode">
+      <div>
+        <button type="button" onclick="window.location.href='{{ url_for( 'survey' ) }}';">Next</button>
+      </div>
+    </div>
+  </div>
+  <!--div id="like_button_container"></div-->
+
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Load our React component. -->
+  <script src="/static/js/main.js"></script>
+
+</body>
+</html>
