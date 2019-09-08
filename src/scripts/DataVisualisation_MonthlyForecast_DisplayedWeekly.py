@@ -6,13 +6,15 @@ from datetime import date
 import datetime
 import matplotlib.ticker as mticker
 
-#Rainfall data for every day of the year this year 
-df2 = pd.read_csv("C:/Users/eaderman/Downloads/Sydney_Rainfall_Data_2019.csv", usecols = ["Year", "Month", "Day", "Rainfall amount (millimetres)"])
+#Rainfall data for every day of the year this year
+df1 = pd.read_csv("./Rainfall_Sydney_2018_Data.csv", usecols = ["Year", "Month", "Day", "Rainfall amount (millimetres)"])
+df2 = pd.read_csv("./Sydney_Rainfall_Data_2019.csv", usecols = ["Year", "Month", "Day", "Rainfall amount (millimetres)"])
 
-# Make a column for the Date out of Year, Month and Day 
+# Make a column for the Date out of Year, Month and Day
+df1['Date'] = pd.to_datetime(df1[['Year', 'Month', 'Day']])
 df2['Date'] = pd.to_datetime(df2[['Year', 'Month', 'Day']])
-ave = float(1000.2/365) #Sydney total for 2018 is 1000.2 mm
-ave_weekly = ave*7 #This is a weekly average rainfall for Sydney in 2018 
+ave_2018 = df1["Rainfall amount (millimetres)"].mean()
+ave_weekly_2018 = ave_2018*7 
 
 # Next 28 days forecast, displayed by week
 Week1 = df2['Rainfall amount (millimetres)'].iloc[-69:-62].sum()
@@ -22,10 +24,10 @@ Week4 = df2['Rainfall amount (millimetres)'].iloc[-48:-41].sum()
 
 x = ["Week 1", "Week 2", "Week 3", "Week 4"]
 y = [Week1, Week2, Week3, Week4]
-plt.axhline(y=ave_weekly, color='r', linestyle='dashed', label='Average weekly rainfall in Sydney 2018')
-plt.ylabel("Monthly rainfall amount by Week (millimetres)")
+plt.axhline(y=ave_weekly_2018, color='#7fcdbb', linestyle='dashed', label='Average weekly rainfall in Sydney 2018')
+plt.ylabel("Rainfall by Week over the next Month (millimetres)")
 plt.xlabel("Week from Today")
-plt.bar(x,y, align='center')
+plt.bar(x,y, align='center', color='#43a2ca')
 plt.text(0.90,19.50, "Average weekly rainfall in Sydney 2018", style='italic')
 plt.show() 
 
