@@ -7,10 +7,6 @@ import numpy as np
 df1 = pd.read_csv("./Rainfall_Sydney_2018_Data.csv", usecols = ["Year", "Month", "Day", "Rainfall amount (millimetres)"])
 df2 = pd.read_csv("C:/Users/eaderman/Downloads/Sydney_Rainfall_Data_2019.csv", usecols = ["Year", "Month", "Day", "Rainfall amount (millimetres)"])
 
-# read dam levels data, perhaps via API
-
-# read rainfall forecast for next 7 days over Warragamba
-
 '''DECISION MAKING FOR SUGGESTIONS BASED ON CRITERIA'''
 # Dam levels low, rainfall expected in next 7 days - save water! 
 current_dam = 0.507 #placeholder data 
