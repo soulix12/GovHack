@@ -6,19 +6,26 @@ from datetime import date
 import datetime
 import matplotlib.ticker as mticker
 
-#Rainfall data for every day of the year this year 
+#Rainfall data for every day of the year this year
+df1 = pd.read_csv("./Rainfall_Sydney_2018_Data.csv", usecols = ["Year", "Month", "Day", "Rainfall amount (millimetres)"])
 df2 = pd.read_csv("C:/Users/eaderman/Downloads/Sydney_Rainfall_Data_2019.csv", usecols = ["Year", "Month", "Day", "Rainfall amount (millimetres)"])
 
-# Make a column for the Date out of Year, Month and Day 
+# Make a column for the Date out of Year, Month and Day
+df1['Date'] = pd.to_datetime(df1[['Year', 'Month', 'Day']])
 df2['Date'] = pd.to_datetime(df2[['Year', 'Month', 'Day']])
-ave = float(1000.2/365) #Sydney total for 2018 is 1000.2 mm
-ave_weekly = ave*7 #This is a weekly average rainfall for Sydney in 2018
+ave_2018 = df1["Rainfall amount (millimetres)"].mean()
+ave_weekly_2018 = ave_2018*7
+#print(df1.head())
+#print(ave_2018, ave_weekly_2018)
+
+#ave = float(1000.2/365) #Sydney total for 2018 is 1000.2 mm
+#ave_weekly = ave*7 #This is a weekly average rainfall for Sydney in 2018
 
 # Next 7 days forecast 
-ax = df2.iloc[-69:-62].plot(kind='bar', x='Date', y='Rainfall amount (millimetres)', color='b', legend=False) 
+ax = df2.iloc[-69:-62].plot(kind='bar', x='Date', y='Rainfall amount (millimetres)', color='#43a2ca', legend=False) 
 ax.plot(legend=None)
-plt.axhline(y=ave, color='r', linestyle='dashed') 
-ax.set_ylabel("Rainfall amount (millimetres)")
+plt.axhline(y=ave_2018, color='#7fcdbb', linestyle='dashed') 
+ax.set_ylabel("Rainfall (millimetres)")
 #ax.set_ylim([-0.05,3.50])
 ax.set_xlabel("2019")
 ticklabels = ['']*len(df2.iloc[-69:-62])

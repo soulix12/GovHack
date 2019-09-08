@@ -3,7 +3,8 @@ import numpy as np
 
 
 '''DATA''' 
-# Rainfall data for Sydney Observatory for every day this year so far 
+# Rainfall data for Sydney Observatory for every day this year so far
+df1 = pd.read_csv("./Rainfall_Sydney_2018_Data.csv", usecols = ["Year", "Month", "Day", "Rainfall amount (millimetres)"])
 df2 = pd.read_csv("C:/Users/eaderman/Downloads/Sydney_Rainfall_Data_2019.csv", usecols = ["Year", "Month", "Day", "Rainfall amount (millimetres)"])
 
 # read dam levels data, perhaps via API
@@ -21,10 +22,11 @@ else:
     print("Dam levels are decent!")
 
 # Average daily rainfall in your area is high, then install rainwater tank
+ave_2018 = df1["Rainfall amount (millimetres)"].mean()
+ave_weekly_2018 = ave_2018*7
 ave_daily_rain = df2["Rainfall amount (millimetres)"].mean()
-ave_daily_rain_2018 = float(412.8/365) # using nationally-averaged annual rainfall for Australia in 2018 
 
-if (ave_daily_rain > ave_daily_rain_2018):
+if (ave_daily_rain > ave_2018):
     print("Your regional rainfall is above the national average! Consider installing a rainwater tank.")
 else:
     print("Your regional rainfall is below the national average! You rely primarily on your local dam for your water.")
