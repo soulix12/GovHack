@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="/static/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
+<header>
+</header>
 <body>
   <!--div id="app">
     test3
@@ -19,9 +21,9 @@
       <div class="pt20">
         <label for="geoLocation">Let us know your location</label>
       </div>
-      <input class="m20" type="text" id="geoLocation" placeholder="Enter suburb or postcode">
+      <input class="m20 field" type="text" id="geoLocation" placeholder="Enter suburb or postcode">
       <div>
-        <button type="button" onclick="window.location.href='{{ url_for( 'dashboard' ) }}';">search</button>
+        <button type="button" onclick="window.location.href='{{ url_for( 'survey' ) }}';">search</button>
       </div>
     </div>
   </div>

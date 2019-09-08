@@ -11,3 +11,8 @@ def hello():
 def dashboard():
     message = "Hello, World2"
     return render_template('dashboard.html', message=message)
+    
+@app.route('/survey.html')
+def survey():
+    message = "Hello, World3"
+    return render_template('survey.html', message=message)

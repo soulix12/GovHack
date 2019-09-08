@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GovHack</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<header>
+</header>
+<body>
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Load our React component. -->
+  <script src="/static/js/main.js"></script>
+  <div class="appContainer">
+    <div class="appContent">
+      <h2>Tell us a bit more about you</h2>
+      <form>
+        <div class="m20">
+        How many people live in your home?
+        <div>
+            <input class="m20 field" type="number" name="numberPeople" value="noPeople">
+        </div> 
+      </div>
+      <div class="m20">
+        What type of building do you live in?
+        <div>
+          <input class="m20 field"type="text" name="building" placeholder="Apartment">
+        </div>
+      </div>
+      <div class="m20">
+        Have you installed solar panels?
+        <div>
+          <form>
+            <input class="m20" type="radio" name="solar" value="true" checked> Yes<br>
+            <input class="m20" type="radio" name="solar" value="false"> No<br>
+          </form> 
+      </div>
+      </form>
+      <br/>
+      <div>
+        <Button variant="success" type="button" onclick="window.location.href='{{ url_for( 'dashboard' ) }}';">Start</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
