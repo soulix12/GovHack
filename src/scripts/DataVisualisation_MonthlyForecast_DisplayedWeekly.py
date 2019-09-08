@@ -8,7 +8,7 @@ import matplotlib.ticker as mticker
 
 #Rainfall data for every day of the year this year
 df1 = pd.read_csv("./Rainfall_Sydney_2018_Data.csv", usecols = ["Year", "Month", "Day", "Rainfall amount (millimetres)"])
-df2 = pd.read_csv("C:/Users/eaderman/Downloads/Sydney_Rainfall_Data_2019.csv", usecols = ["Year", "Month", "Day", "Rainfall amount (millimetres)"])
+df2 = pd.read_csv("./Sydney_Rainfall_Data_2019.csv", usecols = ["Year", "Month", "Day", "Rainfall amount (millimetres)"])
 
 # Make a column for the Date out of Year, Month and Day
 df1['Date'] = pd.to_datetime(df1[['Year', 'Month', 'Day']])
