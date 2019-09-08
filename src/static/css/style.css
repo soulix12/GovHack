@@ -1,12 +1,23 @@
 * { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif;}
 
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+}
+
 .appContainer{
     width: 100%;
+    height: 100%;
     background-color: #fafafa;
     text-align: center;
+    padding: 20px;
 }
 
 .appContent{
+    height: 100%;
     width: 500px;
     margin: auto;
     height: 100%;
@@ -16,7 +27,14 @@
     margin: 20px;
 }
 
+.pt20{
+    padding-top: 20px;
+}
+
 input{
     height: 36px;
     border-radius: 4px;
+    padding-left: 10px;
+    width: 40%;
+    border: solid 1px #858585;
 }
